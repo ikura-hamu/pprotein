@@ -18,8 +18,8 @@ type (
 )
 
 const (
-	dbTypeMySQL       = "my"
-	dbTypePostgreSQL  = "pg"
+	dbTypeMySQL      = "my"
+	dbTypePostgreSQL = "pg"
 )
 
 func (p *processor) Cacheable() bool {
@@ -38,7 +38,7 @@ func (p *processor) Process(snapshot *collect.Snapshot) (io.ReadCloser, error) {
 		dbType = dbTypeMySQL
 	} else {
 		if strings.Contains(dbTypeEnv, "p") {
-			dbType = dbTypeMySQL
+			dbType = dbTypePostgreSQL
 		} else {
 			dbType = dbTypeMySQL
 		}
